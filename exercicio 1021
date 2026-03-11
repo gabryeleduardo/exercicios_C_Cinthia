@@ -1,0 +1,66 @@
+#include <stdio.h>
+
+int main() {
+    double n;
+    
+    scanf("%lf", &n);
+    
+    int nota100, nota50, nota20, nota10, nota5, nota2;
+    int moeda1, moeda050, moeda025, moeda010, moeda05, moeda01;
+    int resto = n * 100; 
+    
+    if(n >= 0 && n < 1000000.00){
+        printf("NOTAS:\n");              
+        
+        nota100 = resto / 10000;         
+        resto %= 10000;
+        printf("%d nota(s) de R$ 100.00\n", nota100);
+        
+        nota50 = resto / 5000;
+        resto %= 5000;
+        printf("%d nota(s) de R$ 50.00\n", nota50);
+        
+        nota20 = resto / 2000;
+        resto %= 2000;
+        printf("%d nota(s) de R$ 20.00\n", nota20);
+        
+        nota10 = resto / 1000;
+        resto %= 1000;
+        printf("%d nota(s) de R$ 10.00\n", nota10);
+        
+        nota5 = resto / 500;
+        resto %= 500;
+        printf("%d nota(s) de R$ 5.00\n", nota5);
+        
+        nota2 = resto / 200;
+        resto %= 200;
+        printf("%d nota(s) de R$ 2.00\n", nota2);
+        
+        printf("MOEDAS:\n");             
+        
+        moeda1 = resto / 100;            
+        resto %= 100;
+        printf("%d moeda(s) de R$ 1.00\n", moeda1);
+        
+        moeda050 = resto / 50;           
+        resto %= 50;
+        printf("%d moeda(s) de R$ 0.50\n", moeda050);
+        
+        moeda025 = resto / 25;
+        resto %= 25;
+        printf("%d moeda(s) de R$ 0.25\n", moeda025);
+        
+        moeda010 = resto / 10;
+        resto %= 10;
+        printf("%d moeda(s) de R$ 0.10\n", moeda010);
+        
+        moeda05 = resto / 5;
+        resto %= 5;
+        printf("%d moeda(s) de R$ 0.05\n", moeda05);
+        
+        moeda01 = resto / 1;
+        printf("%d moeda(s) de R$ 0.01\n", moeda01);
+    }
+
+    return 0;
+}
